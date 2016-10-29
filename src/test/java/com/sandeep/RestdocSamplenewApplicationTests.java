@@ -41,7 +41,10 @@ public class RestdocSamplenewApplicationTests {
 	@Before
 	public void setUp() {
 	    this.mockMvc = MockMvcBuilders.webAppContextSetup(this.context)
-	            .apply(documentationConfiguration(this.restDocumentation))
+	            .apply(documentationConfiguration(this.restDocumentation)
+	            		.uris().withScheme("https").
+	            		withHost("rest-docssandeep.apps-np.homedepot.com").
+	            		withPort(443))
 	            .build();
 	}
 	
